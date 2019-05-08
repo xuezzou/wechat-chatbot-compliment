@@ -5,8 +5,8 @@
 import os
 import sys
 import random
-from zhcnSegment import zhcnSeg
-from sentenceSimilarity import SentenceSimilarity
+from sentence_similarity.zhcnSegment import zhcnSeg
+from sentence_similarity.sentenceSimilarity import SentenceSimilarity
 
 class kuakuaChat():
     def __init__(self):

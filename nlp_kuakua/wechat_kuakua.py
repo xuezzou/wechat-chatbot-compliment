@@ -1,15 +1,9 @@
-"""
-    WeChat Auto Admire V0.0.1
-"""
-
 # -*- coding:utf-8 -*- 
 
 import itchat, re
-import random
 from itchat.content import *
-from nlp_kuakua import kuakuaChat
+import random
 
-test_bot = kuakuaChat()
 
 @itchat.msg_register([TEXT], isGroupChat=True)
 def text_reply(msg):
@@ -22,8 +16,7 @@ def text_reply(msg):
         print('Who sent it: %s' % username)
         print('-+-+'*5)
 
-
-        
+        test_bot = kuakuaChat()
         user_input = msg['Text'];
         answer_list = test_bot.answer_question(user_input)
         response = random.choice(answer_list)
@@ -32,5 +25,6 @@ def text_reply(msg):
 # Windows系统，enableCmdQR=True
 # itchat.auto_login(enableCmdQR=True, hotReload=True)
 # Mac、Linux，enableCmdQR=2
+
 itchat.auto_login(enableCmdQR=2, hotReload=True)
 itchat.run()

@@ -2,8 +2,9 @@
 import os
 import sys
 # 模块路径引用统一回退到Libbot目录下
-project_path = os.path.abspath(os.path.join(os.getcwd(), "../../.."))
+project_path = os.path.abspath(os.path.join(os.getcwd(), "./sentence_similarity"))
 sys.path.append(project_path)
+print(project_path)
 
 from zhcnSegment import zhcnSeg
 
