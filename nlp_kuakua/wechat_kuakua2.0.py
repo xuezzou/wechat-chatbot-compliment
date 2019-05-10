@@ -3,11 +3,13 @@
 import itchat, re
 from itchat.content import *
 import random
+from nlp_kuakua import kuakuaChat
 
+test_bot = kuakuaChat()
 
 @itchat.msg_register([TEXT], isGroupChat=True)
 def text_reply(msg):
-    # group_name的值修改成你要夸的weixin群名
+    # group_name的值修改成要夸的weixin群名
     group_name = '夸夸';
     if msg['User']['NickName'] == group_name:
         print('Message from: %s' % msg['User']['NickName'])
@@ -16,7 +18,6 @@ def text_reply(msg):
         print('Who sent it: %s' % username)
         print('-+-+'*5)
 
-        test_bot = kuakuaChat()
         user_input = msg['Text'];
         answer_list = test_bot.answer_question(user_input)
         response = random.choice(answer_list)

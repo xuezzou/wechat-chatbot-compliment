@@ -24,6 +24,7 @@ class zhcnSeg(object):
             self.stopwords.append(line)
         file_obj.close()
 
+    # jieba.cut 方法接受三个输入参数: 需要分词的字符串；cut_all 参数用来控制是否采用全模式；HMM 参数用来控制是否使用 HMM 模型
     def cut(self,sentence,stopword=True):
         seg_list = jieba.cut(sentence)
 
@@ -35,6 +36,7 @@ class zhcnSeg(object):
 
         return results
 
+    # jieba.cut_for_search 方法接受两个参数：需要分词的字符串；是否使用 HMM 模型。该方法适合用于搜索引擎构建倒排索引的分词，粒度比较细
     def cut_for_search(self,sentence,stopword=True):
         seg_list = jieba.cut_for_search(sentence)
 
